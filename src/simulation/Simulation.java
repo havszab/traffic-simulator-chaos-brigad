@@ -1,5 +1,6 @@
 package simulation;
 
+import entities.Border;
 import entities.Dodgem;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
@@ -13,8 +14,8 @@ public class Simulation extends Pane {
     }
 
     public void start() {
-        Scene scene =  getScene();
         initDodgems();
+        initBorder();
         Globals.simulationLoop = new SimulationLoop(this);
         Globals.simulationLoop.start();
     }
@@ -23,6 +24,9 @@ public class Simulation extends Pane {
         for (int i = 0; i < 10; i++) {
             new Dodgem(this, 200 + i * 80, 350);
         }
+    }
 
+    private void initBorder(){
+        new Border(this,0,0);
     }
 }
