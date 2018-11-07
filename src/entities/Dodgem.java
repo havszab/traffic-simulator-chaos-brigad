@@ -27,17 +27,19 @@ public class Dodgem extends Entity implements Animatable {
 
     @Override
     public void step() {
-
+        this.setRotate(this.getRotate() + (Util.getRandomIntInRange(0, 30)-15));
         Point2D heading = Util.directionToVector(this.getRotate(), this.speed);
         setX(getX() + heading.getX());
         setY(getY() + heading.getY());
 
         for (Entity entity : Globals.getGameObjects()) {
             if (getBoundsInParent().intersects(entity.getBoundsInParent()) && entity != this) {
-                if (entity instanceof Dodgem )
+                if (entity instanceof Dodgem ) {
                     handleCrash();
-                else if (entity instanceof Border)
+                } else if (entity instanceof Border) {
+                    System.out.println("border");
                     handleCrash();
+                }
             }
         }
     }
