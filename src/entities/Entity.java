@@ -12,14 +12,15 @@ public abstract class Entity extends ImageView {
 
     }
 
+
     protected Entity(Pane pane) {
         this.pane = pane;
-        Globals.addGameObject(this);
+        Globals.addSimulationObject(this);
     }
 
     public void destroy() {
         if (getParent() != null) pane.getChildren().remove(this);
-        Globals.removeGameObject(this);
+        Globals.removeSimulationObject(this);
     }
 
 }

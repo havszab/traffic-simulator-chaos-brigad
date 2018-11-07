@@ -4,6 +4,7 @@ import entities.Entity;
 import simulation.SimulationLoop;
 
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Globals {
@@ -12,13 +13,18 @@ public class Globals {
     public static List<Entity> newSimulationObjects;
     public static List<Entity> oldSimulationObjects;
 
+    static {
+        simulationObjects = new LinkedList<>();
+        newSimulationObjects = new LinkedList<>();
+        oldSimulationObjects = new LinkedList<>();
+    }
     public static SimulationLoop simulationLoop;
 
-    public static void addGameObject(Entity toAdd) {
+    public static void addSimulationObject(Entity toAdd) {
         newSimulationObjects.add(toAdd);
     }
 
-    public static void removeGameObject(Entity toRemove) {
+    public static void removeSimulationObject(Entity toRemove) {
         oldSimulationObjects.add(toRemove);
     }
 

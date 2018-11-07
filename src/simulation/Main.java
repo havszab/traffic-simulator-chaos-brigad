@@ -11,9 +11,11 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Simulation simulation = new Simulation();
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(simulation, 300, 275));
+        primaryStage.setTitle("Dodgem simulator");
+        primaryStage.setScene(new Scene(simulation, 1000, 700));
         primaryStage.show();
+        simulation.start();
+
     }
 
 
