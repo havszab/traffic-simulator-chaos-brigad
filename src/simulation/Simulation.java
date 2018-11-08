@@ -9,8 +9,6 @@ import util.Globals;
 
 public class Simulation extends Pane {
 
-
-
     Simulation() {
 
     }
@@ -29,13 +27,9 @@ public class Simulation extends Pane {
     }
 
     private void initBorder(){
-        new Border(this,0,0, "browBG.png");
-        new Border(this,0,650, "browBG.png");
-        Border lB = new Border(this, -500, 300, "browBG.png");
-        lB.setRotate(90);
-        Border rB = new Border(this, 500, 300, "browBG.png");
-        rB.setRotate(90);
-
-
+        new Border(this,-50,0, "left.png");
+        new Border(this,960,0, "right.png");
+        new Border(this,0,-50, "top.png");
+        new Border(this,0,660, "button.png");
     }
 }
