@@ -27,7 +27,9 @@ public class Simulation extends Pane {
     }
 
     private void initBorder(){
-        new Border(this,0,0, "brown1.png");
-        new Border(this,0,355, "brown2.png");
+        new Border(this,-50,0, "left.png");
+        new Border(this,960,0, "right.png");
+        new Border(this,0,-50, "top.png");
+        new Border(this,0,660, "button.png");
     }
 }
